@@ -45,7 +45,8 @@ resource "azurerm_public_ip" "ctf_public_ip" {
   name                = "ctf-public-ip"
   location            = azurerm_resource_group.ctf_rg.location
   resource_group_name = azurerm_resource_group.ctf_rg.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static" #changed to static allocation
+  sku                 = "Standard"
 }
 
 # Create a network security group
