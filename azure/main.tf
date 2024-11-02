@@ -6,9 +6,16 @@ variable "az_region" {
   default     = "East US"
 }
 
+variable "subscription_id" {
+  type = string
+}
+
+
 # Configure the Azure provider
 provider "azurerm" {
   features {}
+subscription_id = var.subscription_id
+  use_cli         = true
 }
 
 # Create a resource group
